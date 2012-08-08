@@ -78,6 +78,7 @@ class baselayout (
   }
 
   concat { '/etc/conf.d/net':
+    force   => true,
     require => Package['openrc'],
   }
 
