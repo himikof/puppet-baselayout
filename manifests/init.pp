@@ -145,7 +145,7 @@ define baselayout::mount(
     $options_str = join($options, ",")
   }
   
-  concat::fragment { 'fstab_fragment_$title':
+  concat::fragment { "fstab_fragment_$title":
     target  => '/etc/fstab',
     content => "$device\t\t$mountpoint\t\t$type\t$options_str\t$dump $pass\n"
   }
