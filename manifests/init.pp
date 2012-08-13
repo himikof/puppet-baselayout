@@ -77,11 +77,6 @@ class baselayout (
     target => "/usr/share/zoneinfo/$timezone",
   }
 
-  concat { '/etc/conf.d/net':
-    force   => true,
-    require => Package['openrc'],
-  }
-
   case $::operatingsystem {
     gentoo: {
       baselayout::runlevel_service {
