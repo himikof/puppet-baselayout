@@ -29,8 +29,8 @@ class baselayout (
 #         tag      => 'buildhost'
 #       }
       package { 
-        'udev':
-          category => 'sys-fs',
+        'sys-fs/udev':
+          #category => 'sys-fs',
           ensure   => 'installed',
           tag      => 'buildhost';
         
@@ -42,7 +42,7 @@ class baselayout (
         'openrc':
           category => 'sys-apps',
           ensure   => 'installed',
-          require  => [Package['udev'], Package['baselayout']],
+          require  => [Package['sys-fs/udev'], Package['baselayout']],
           tag      => 'buildhost';
           
         'sysvinit':
