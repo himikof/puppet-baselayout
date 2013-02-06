@@ -31,7 +31,7 @@ class baselayout (
       package { 
         'udev':
           category => 'sys-fs',
-          ensure   => 'latest',
+          ensure   => 'installed',
           tag      => 'buildhost';
         
         'baselayout':
@@ -41,7 +41,7 @@ class baselayout (
           
         'openrc':
           category => 'sys-apps',
-          ensure   => 'latest',
+          ensure   => 'installed',
           require  => [Package['udev'], Package['baselayout']],
           tag      => 'buildhost';
           
